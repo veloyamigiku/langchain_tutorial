@@ -9,7 +9,7 @@ def main(args):
   
   setting_env_vars()
 
-  llm = ChatOllama(
+  model = ChatOllama(
     model='llama3.1',
     temperature=0)
   
@@ -17,8 +17,12 @@ def main(args):
     SystemMessage('Translate the following from English into Italian'),
     HumanMessage('hi!')
   ]
-  ai_msg = llm.invoke(messages)
+  ai_msg = model.invoke(messages)
   print(ai_msg)
+
+  print('Streaming')
+  for token in model.stream(messages):
+    print(token.content, end='|')
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser()

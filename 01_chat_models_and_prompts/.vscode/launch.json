@@ -5,11 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "main",
+            "name": "using_language_models",
             "type": "debugpy",
             "request": "launch",
-            "program": "main.py",
+            "program": "using_language_models.py",
             "console": "integratedTerminal"
-        }
+        },
+        {
+            "name": "prompt_templates",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "prompt_templates.py",
+            "console": "integratedTerminal"
+        },
     ]
 }
